@@ -29,7 +29,12 @@ RUN apt-get update -y && \
   ninja-build \
   bison \
   libglib2.0-dev \
-  libglib2.0-dev-bin
+  libglib2.0-dev-bin \
+  libgsf-1-dev \
+  gobject-introspection \
+  libgcab-dev \
+  gcab \
+  diffutils
 
 RUN touch /usr/bin/rpm && chmod +x /usr/bin/rpm
 RUN git clone --recursive https://github.com/darktoolz/msitools /build
@@ -54,7 +59,12 @@ RUN apt autoremove -y && apt-get clean -y && apt-get remove -y \
   ninja-build \
   bison \
   libglib2.0-dev \
-  libglib2.0-dev-bin
+  libglib2.0-dev-bin \
+  libgsf-1-dev \
+  gobject-introspection \
+  libgcab-dev \
+  gcab \
+  diffutils
 
 RUN rm -rf /build .git .github /var/lib/apt /var/cache /var/log/apt /var/log/dpkg* /var/log/* \
         /var/lib/dpkg* /usr/libexec/dpkg* /usr/share/doc /usr/share/man /var/log/alt*
