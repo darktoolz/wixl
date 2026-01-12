@@ -14,6 +14,7 @@ RUN apt-get update -y && \
   iproute2 \
   binutils \
 	locales \
+  libmsi-1.0 \
   git \
   uuid \
   make \
