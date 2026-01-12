@@ -36,7 +36,7 @@ RUN apt-get update -y && \
   gcab \
   diffutils
 
-RUN touch /usr/bin/rpm && chmod +x /usr/bin/rpm
+RUN echo "#!/bin/sh\n" > /usr/bin/rpm && chmod +x /usr/bin/rpm
 RUN git clone --recursive https://github.com/darktoolz/msitools /build
 WORKDIR /build
 RUN meson _build -Dvalidate-wxi=true && ninja -C _build
