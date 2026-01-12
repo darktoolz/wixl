@@ -29,7 +29,7 @@ RUN apt-get update -y && \
   ninja-build
 
 RUN touch /usr/bin/rpm && chmod +x /usr/bin/rpm
-RUN git clone https://github.com/darktoolz/msitools /build
+RUN git clone --recursive https://github.com/darktoolz/msitools /build
 WORKDIR /build
 RUN meson _build -Dvalidate-wxi=true && ninja -C _build
 RUN cp _build/tools/msibuild _build/tools/msiextract _build/tools/msiinfo \
