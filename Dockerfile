@@ -63,8 +63,7 @@ RUN apt autoremove -y && apt-get clean -y && apt-get remove -y \
   libgsf-1-dev \
   gobject-introspection \
   libgcab-dev \
-  gcab \
-  diffutils
+  gcab
 
 RUN rm -rf /build .git .github /var/lib/apt /var/cache /var/log/apt /var/log/dpkg* /var/log/* \
         /var/lib/dpkg* /usr/libexec/dpkg* /usr/share/doc /usr/share/man /var/log/alt*
